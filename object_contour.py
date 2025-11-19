@@ -26,8 +26,10 @@ while True:
     # Find ALL contours 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # Draw every contour and bounding boxes
-    for cnt in contours:
+    # Draw largest contour and bounding boxes
+    if len(contours) > 0:
+        # Pick largest contour by area
+        cnt = max(contours, key=cv2.contourArea)
         # Draw the contour (blue)
         cv2.drawContours(frame, [cnt], -1, (255, 0, 0), 2)
 
