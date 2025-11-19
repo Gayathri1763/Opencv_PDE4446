@@ -13,11 +13,23 @@ while True:
     if not ret:
         break
 
+    h, w = frame.shape[:2]
+
+    # Screen center
+    screen_center = (w // 2, h // 2)
+    cv2.circle(frame, screen_center, 5, (255, 255, 255), -1)
+    
+
+
     # Convert frame to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # Create mask 
     mask = cv2.inRange(hsv, LOWER_HSV, UPPER_HSV)
+
+    # Noise reduction
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=4)
 
     # Find ALL contours 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
