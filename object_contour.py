@@ -19,10 +19,6 @@ while True:
     # Create mask 
     mask = cv2.inRange(hsv, LOWER_HSV, UPPER_HSV)
 
-    # Reduce noise
-    mask = cv2.erode(mask, None, iterations=2)
-    mask = cv2.dilate(mask, None, iterations=2)
-
     # Find ALL contours 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
