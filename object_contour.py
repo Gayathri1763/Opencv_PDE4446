@@ -1,0 +1,36 @@
+import cv2
+import numpy as np
+
+# ===== ENTER YOUR HSV RANGE =====
+LOWER_HSV = np.array([175, 59, 75])
+UPPER_HSV = np.array([179, 239, 255])
+# =================================
+
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Convert frame to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # Create mask 
+    mask = cv2.inRange(hsv, LOWER_HSV, UPPER_HSV)
+
+    # Find ALL contours 
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Draw every contour
+    cv2.drawContours(frame, contours, -1, (0, 255, 0), 2)
+
+    # Display result
+    cv2.imshow("All Contours", frame)
+    cv2.imshow("Mask", mask)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
