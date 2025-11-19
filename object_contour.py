@@ -38,7 +38,7 @@ while True:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
 
-    # Display result
+    # Display output
     cv2.imshow("All Contours", frame)
     cv2.imshow("Mask", mask)
 
