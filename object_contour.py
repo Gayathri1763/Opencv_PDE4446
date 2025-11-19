@@ -42,10 +42,14 @@ while True:
         cv2.drawContours(frame, [cnt], -1, (255, 0, 0), 2)
 
         # Get bounding box
-        x, y, w, h = cv2.boundingRect(cnt)
+        x, y, wb, hb = cv2.boundingRect(cnt)
 
         # Draw rectangle (green)
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.rectangle(frame, (x, y), (x+wb, y+hb), (0, 255, 0), 2)
+
+        # Object center
+        obj_center = (x + wb // 2, y + hb // 2)
+        cv2.circle(frame, obj_center, 5, (0, 0, 255), -1)
 
 
     # Display output
