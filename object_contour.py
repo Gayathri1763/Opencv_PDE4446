@@ -22,10 +22,19 @@ while True:
     # Find ALL contours 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # Draw every contour
-    cv2.drawContours(frame, contours, -1, (0, 255, 0), 2)
+    # Draw every contour and bounding boxes
+    for cnt in contours:
+        # Draw the contour (blue)
+        cv2.drawContours(frame, [cnt], -1, (255, 0, 0), 2)
 
-    # Display result
+        # Get bounding box
+        x, y, w, h = cv2.boundingRect(cnt)
+
+        # Draw rectangle (green)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+
+    # Display output
     cv2.imshow("All Contours", frame)
     cv2.imshow("Mask", mask)
 
