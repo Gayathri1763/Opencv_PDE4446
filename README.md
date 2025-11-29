@@ -14,3 +14,7 @@ Here all the red objects in front of the screen will be shown in white and the r
 Now we add contour lines for the object that is detected. As its easy to detect the center of shapes like rectangle, square etc we create a rectangle around the contour lines.  
 There will be issue when there are other red objects in the screen, so we edit the code as it only detects the object which is larger in size. So while placing the nearer to camera it will be the largest one and will be detected.  
 Next we found out the center of this rectangle and also the center of camera screen and placing two diff colour dots in each centers.
+
+## Step 4: Finding the Distance Between Two Centers
+Now we find the distance between the center of object and and center of camera. We also draw a line between them.  
+Our next goal is to find the difference and adjust it as they line with each other.
