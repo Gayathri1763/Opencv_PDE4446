@@ -5,7 +5,7 @@ def nothing(x):
     pass
 
 # Initialize camera
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 # Create trackbars for HSV adjustment
 cv2.namedWindow("Controls")
