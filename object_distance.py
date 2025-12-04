@@ -18,8 +18,6 @@ while True:
     # Screen center
     screen_center = (w // 2, h // 2)
     cv2.circle(frame, screen_center, 5, (255, 255, 255), -1)
-    
-
 
     # Convert frame to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -51,6 +49,8 @@ while True:
         obj_center = (x + wb // 2, y + hb // 2)
         cv2.circle(frame, obj_center, 5, (0, 0, 255), -1)
 
+        # Draw line between screen center and object center (yellow)
+        cv2.line(frame, screen_center, obj_center, (0, 255, 255), 2)
 
     # Display output
     cv2.imshow("All Contours", frame)
