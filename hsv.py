@@ -6,6 +6,7 @@ def nothing(x):
 
 # Initialize camera
 cap = cv2.VideoCapture(1)
+#166 80 73
 
 # Create trackbars for HSV adjustment
 cv2.namedWindow("Controls")
