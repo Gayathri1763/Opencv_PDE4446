@@ -18,3 +18,42 @@ Next we found out the center of this rectangle and also the center of camera scr
 ## Step 4: Finding the Distance Between Two Centers
 Now we find the distance between the center of object and and center of camera. We also draw a line between them.  
 Our next goal is to find the difference and adjust it as they line with each other.
+
+## Step 5: The Final: Camera Control using openCV
+## Pan–Tilt Camera Object Tracking 
+
+## System Pipeline
+
+1. Camera captures live video frames.
+2. Python (OpenCV):
+   - Converts the frame from BGR to HSV color space
+   - Detects the colored object using HSV thresholding
+   - Calculates the pixel error between object center and frame center
+   - Normalizes the error to the range [-1, 1]
+   - Applies proportional gain, dead-zone, and smoothing
+3. Python sends pan–tilt commands to Arduino via Serial (9600 baud).
+4. Arduino:
+   - Receives "pan tilt" values as a string
+   - Maps values to servo angles
+   - Sends back "OK" after updating servos
+
+---
+
+##  Center Alignment Logic
+
+### Screen Center
+python
+screen_center = (w // 2, h // 2)
+
+## Conclusion
+
+This project successfully demonstrates the integration of vision-based sensing with closed-loop motion control for real-time object tracking.
+
+Outcomes:
+- Vision-based sensing using OpenCV and HSV color segmentation
+- Closed-loop control that continuously aligns the camera with the object
+- Stable serial communication between Python and Arduino for actuator control
+
+The video presentation :- 
+
+
