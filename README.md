@@ -19,7 +19,7 @@ Next we found out the center of this rectangle and also the center of camera scr
 Now we find the distance between the center of object and and center of camera. We also draw a line between them.  
 Our next goal is to find the difference and adjust it as they line with each other.
 
-## Step 5: The Final: Camera Control using openCV
+## Step 5: The Final: Camera Control using OpenCV and PySerial
 ## Pan–Tilt Camera Object Tracking 
 
 ## System Pipeline
