@@ -48,6 +48,6 @@ Outcomes:
 - Closed-loop control that continuously aligns the camera with the object
 - Stable serial communication between Python and Arduino for actuator control
 
-The video presentation :- 
+The video presentation :-  https://youtu.be/1VE17JQMzdc?si=7kAB63myiUmQANPD
 
 
