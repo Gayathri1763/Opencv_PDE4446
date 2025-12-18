@@ -39,6 +39,12 @@ Our next goal is to find the difference and adjust it as they align with each ot
 
 ---
 
+## References
+
+- https://www.geeksforgeeks.org/choosing-the-correct-upper-and-lower-hsv-boundaries-for-color-detection-with-cv-inrange-opencv/?utm_source=chatgpt.com
+- ChatGPT, Deepseek
+- Google Web Browser
+
 ## Conclusion
 
 This project successfully demonstrates the integration of vision-based sensing with closed-loop motion control for real-time object tracking.
